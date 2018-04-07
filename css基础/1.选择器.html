@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style type="text/css">
+        /*
+
+        后代选择器
+            - 作用：
+                - 选中指定元素的后代元素
+            - 语法：
+                - 祖先元素 后代元素 {}
+
+        子元素选择器
+            - 作用：
+                - 选中指定父元素的指定子元素
+            - 语法：
+                - 父元素 > 子元素 {}
+         */
+        div span {
+            color: deeppink;
+        }
+
+        div > span {
+            color: red;
+        }
+
+        div.box {
+            font-size: 20px;
+        }
+
+        p:last-child {
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>我是div中的p</p>
+        <span>我是div中的span</span>
+        <p>
+            <span>我是p中的span</span>
+        </p>
+    </div>
+    <span>我是body中的span</span>
+</body>
+</html>

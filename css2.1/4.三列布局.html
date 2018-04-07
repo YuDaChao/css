@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+        }
+        div {
+            height: 100px;
+        }
+        .left, .right {
+            width: 200px;
+            background-color: pink;
+        }
+        .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .middle {
+            min-width: 600px;
+            padding: 0 200px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">left</div>
+    <div class="middle">middle</div>
+    <div class="right">right</div>
+</body>
+</html>
