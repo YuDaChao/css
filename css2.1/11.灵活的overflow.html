@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.灵活的overflow</title>
+    <style type="text/css">
+        .overflower {
+            display: inline-block;
+            overflow: hidden;
+
+            max-width: 100%;
+            height: 1.5em;
+            line-height: 1.5em;
+
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+
+        .overflower-long {
+            display: inline; /* display初始值为 inline */
+        }
+        .overflower-short {
+            display: none;
+        }
+        @supports (flex-wrap: wrap) {
+            .overflower {
+                display: inline-flex;
+                flex-wrap: wrap;
+            }
+
+            .overflower-short {
+                display: block;
+                overflow: hidden;
+
+                flex-grow: 1;
+                width: 0;
+
+                text-overflow: ellipsis;
+
+                background-color: pink;
+            }
+
+            .overflower-long {
+                flex-basis: 100%;
+                background-color: deeppink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <span class="overflower">
+        <span class="overflower-short">
+            这里放置短文本
+            这里放置短文本
+            这里放置短文本
+        </span>
+        <span class="overflower-long">
+            这里放置长文本，这里放置长文本，这里放置长文本
+            这里放置长文本，这里放置长文本，这里放置长文本
+        </span>
+    </span>
+</body>
+</html>
