@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01.基本选择器</title>
+	<style type="text/css">
+		/*
+			基本选择器：
+			    通配符选择器 * { margin: 0, padding: 0; }
+			    元素选择器 body { background: #ccc; }
+				id选择器 #wrap { color: #ccc; }  
+				类选择器 .wrap { color: #ccc; }
+				后代选择器 .list li { margin: 10px; }
+				直接后代选择器 .list > li { margin: 10px; }
+				相邻兄弟选择器 #wrap > #first + .inner { color: #f00; }
+				通用兄弟选择器 #wrap > #first ~ div { border: 1px solid; }
+				分组选择器
+		*/
+
+
+		/* 通配符选择器 */
+		* {
+			margin: 0;
+			padding: 0
+		}
+
+		/* 元素选择器 */
+		div {
+			border: 1px solid;
+		}
+
+		/* id选择器 */
+		#container {
+			background: pink;
+		}
+
+		/* 类选择器 */
+		.wrap {
+			margin: 10px;
+		}
+
+		/* 后代选择器 */
+		.wrap .list {
+			/* color 是可继承的 */
+			color: red; 
+		}
+
+		/* 直接后代选择器 (不包含孙子和重孙元素) */
+		.wrap > .inner {
+			background: yellow
+		}
+
+		/* 相邻兄弟选择器 (紧跟着！！！！！) */
+		/* 注意： 相邻兄弟选择器选择的元素必须紧跟着，中间不能有任何元素 */
+		#wrap > #first + .inner {
+			color: pink;
+		}
+
+		/* 通用兄弟选择器 */
+		#wrap > #first ~ .inner {
+			padding: 20px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		这是一个div - class
+		<div id="container">
+			这是内容区域 - id
+			<div class="inner">container > inner</div>
+		</div>
+		<div class="inner">wrap > inner</div>
+		<div class="list">list-1</div>
+		<div class="list">lis-2</div>
+	</div>
+	<hr />
+	<div id="wrap">
+		<div class="inner">inner-1</div>
+		<div id="first">first</div>
+		<div></div>
+		<div class="inner">inner-2 <div class="inner">inner-2-1</div></div>
+		<div class="inner">inner-3</div>
+		<div class="inner">inner-4</div>
+		<div class="inner">inner-4</div>
+	</div>
+</body>
+</html>
