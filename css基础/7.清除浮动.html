@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>清除浮动</title>
+    <link rel="stylesheet" href="resets.css">
+    <style type="text/css">
+        .wrap {
+            border: 1px solid black;
+        }
+        .wrap .content {
+            /* 当子元素浮动后，子元素就会脱离文档流，此时就没办法撑起父元素的高度 */
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* IE 6/7 */
+        .clearfix {
+            zoom: 1;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <div class="wrap clearfix">
+        <div class="content">
+            我是内容区域
+        </div>
+    </div>
 </body>
 </html>
