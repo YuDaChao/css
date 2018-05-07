@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02.属性选择器</title>
+	<style type="text/css">
+		/*
+			1: 存在和值属性选择器;
+				[attr]: 该选择器选择包含 attr 属性的所有元素， 不论attr为何物;
+				[attr=val]: 选择 attr 属性值为 val 的所有元素;
+				[attr~=val]: 表示带有 attr 属性的元素 并且该元素是以一个空格作为分割的值列表，其中至少包含一个val;
+				[attr|=val]: 选择attr属性为val或以val-开头的元素;
+				[attr^=val]: 选择attr属性为以val开头的元素;
+				[attr$=val]: 选择attr属性为以val结尾的元素;
+				[attr*=val]: 选择attr属性为包含val的元素;
+
+
+		*/
+
+
+		
+		.wrap [name] {
+			border: 1px solid;
+		}
+
+		.wrap [name="wrap-1"] {
+			font-weight: bold;
+		}
+
+		.wrap [name~="two"] {
+			background: pink;
+		}
+
+		.wrap [name|="wrap"] {
+			background: #ccc;
+		}
+		.wrap [name^="wrap"] {
+			background: red;
+		}
+		.wrap [name$="1"] {
+			background: green;
+		}
+		.wrap [name*="num"] {
+			background: #999;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<div name="wrap-1 num">1</div>
+		<div name="wrap-2 two">2</div>
+		<div name="wrap-3">3</div>
+		<div name="wrap-4 num">4</div>
+		<div name="wrap-5">5</div>
+	</div>
+	
+</body>
+</html>
