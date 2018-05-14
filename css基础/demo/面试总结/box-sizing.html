@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css面试总结</title>
+	<style type="text/css">
+		/*
+			问题: 一个div，宽度是100px，此时设置padding是20px，添加一个什么css属性可以让div的实际宽度仍然保持在100px，而不是140px？;
+			考点: box-sizing:
+				box-sizing属性用于更改计算元素宽度和高度的默认css盒子模型。
+				box-sizing 主要有两个关键值：content-box / border-box, 其中content-box是默认值
+
+		*/
+		.box {
+			width: 100px;
+			padding: 20px;
+			background-color: pink;
+			box-sizing: border-box;
+		}
+
+
+		.parent {
+			width: 100px;
+			height: 300px;
+			border: 1px solid;
+			margin: auto;
+		}
+
+		.parent .child {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100px;
+			padding: 5px;
+			border-width: 5px;
+			background-color: pink;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="parent">
+		<div class="child"></div>
+	</div>
+</body>
+</html>

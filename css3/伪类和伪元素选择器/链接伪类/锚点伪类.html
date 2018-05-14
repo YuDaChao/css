@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>锚点伪类</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.test1:link {
+			color: pink
+		}
+
+		.test1:visited {
+			color: green;
+		}
+
+		.test1:hover {
+			color: yellow;
+		}
+
+		.test1:active {
+			color: red;
+		}
+
+		/* link伪类只能作用在a标签上 */
+		.test:link {
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<a href="#" class="test1">我是一个a</a>
+	<div class="test">我是一个div</div>
+</body>
+</html>
