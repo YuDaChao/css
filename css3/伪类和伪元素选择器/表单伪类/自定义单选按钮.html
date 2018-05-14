@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义单选按钮</title>
+	<!-- 
+		
+	
+	 -->
+	 <style type="text/css">
+	 	* {
+	 		margin: 0;
+	 		padding: 0;
+	 	}
+
+		/* label 是一个行内元素 */
+		label {
+			position: relative;
+			/* float就是一个带有方位的 display: inline-block; */
+			/*float: left;*/
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+			overflow: hidden;
+			border-radius: 50%;
+		}
+
+		/* > 直接子元素选择器 */
+		label > input {
+			position: absolute;
+			top: -20px;
+		}
+
+		/* + 相邻兄弟选择器 */
+		input + span {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		input:checked + span {
+			background-color: pink;
+		}
+
+	 </style>
+</head>
+<body>
+
+	<label>
+		<input type="radio" name="radio">
+		<span></span>
+	</label>
+	<label>
+		<input type="radio" name="radio">
+		<span></span>
+	</label>
+	<label>
+		<input type="radio" name="radio">
+		<span></span>
+	</label>
+	
+</body>
+</html>
