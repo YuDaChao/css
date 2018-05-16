@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一行居中多行巨左</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrap {
+			width: 500px;
+			border: 1px solid;
+			text-align: center;
+		}
+
+		.wrap p {
+			/* 行内元素可以继承父元素的text-align属性 */
+			display: inline-block;
+			text-align: left;
+		}
+
+		/* 这个标签主要是解决超出两行显示... */
+		em {
+			display: -webkit-box;
+			/* 超出显示... 隐含条件 不行是块/行内块元素 */
+			overflow: hidden;
+			text-overflow: ellipsis;
+			/* 将对象设置成弹性伸缩盒子模型显示 */
+			/*display: -webkit-box;*/
+			/* 显示在一个块元素内显示的的文本数 */
+			-webkit-line-clamp: 2;
+			/* 规定框的子元素应该被水平或垂直排列 */
+			-webkit-box-orient: vertical;
+		}
+
+	</style>
+</head>
+<body>
+	<h2 class="wrap">
+		<p><em>单行巨中，多行巨左单行巨中，多行巨左单行巨中，多行巨左单行巨中，多行巨左单行巨中，多行巨左单行巨中，多行巨左</em></p>
+	</h2>
+</body>
+</html>
