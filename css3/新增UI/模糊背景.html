@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模糊背景</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.wrap {
+			position: relative;
+			height: 200px;
+		}
+		.wrap img {
+			width: 120px;
+			margin: 24px 0 0 24px;
+		}
+		.wrap .bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: url(bg.png) no-repeat;
+			background-size: 100% 100%;
+			z-index: -1;
+			filter: blur(10px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="bg.png">
+		<div class="bg"></div>
+	</div>
+</body>
+</html>
