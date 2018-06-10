@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片水平垂直居中</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            text-align: center;
+        }
+        body::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<img src="avatar.jpeg">
+
+</body>
+</html>

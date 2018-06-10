@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型阴影</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            /*指定宽高的盒子水平垂直居中*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* 颜色 x偏移量 y偏移量 模糊程度（值越大越模糊） */
+            /*
+
+                inset:
+                    默认阴影是在边框外
+                    使用inset后，阴影在边框内(即使是透明边框)，背景之上内容之下
+                offset-x offset-y:
+                    设置阴影偏移量，默认值为0，如果是负值，阴影位于元素的左边
+                blur-radius:
+                    默认值为0，值越大，模糊面积越大，阴影就越大越淡，不能为负值
+                spread-radius:
+                    默认值为0，取正值时，阴影扩大，负值时阴影收缩
+                color:
+                    阴影颜色
+
+            */
+            /*none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#*/
+            box-shadow: 10px 10px 10px indianred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">box</div>
+
+</body>
+</html>
